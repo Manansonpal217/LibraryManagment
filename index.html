@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Signup Page</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <!-- Making main container -->
+    <div class="container">
+      <h1 class="heading">E-Library</h1>
+      <div class="tab">
+        <a href="#login" onclick="showTab('login')">Login</a>
+        <a href="#signup" onclick="showTab('signup')">Sign Up</a>
+      </div>
+
+      <!-- Inside content of greyish box -->
+      <div class="content">
+        <div id="login" class="tab-content">
+          <div class="form-group">
+            <label for="loginEmail">Email:</label>
+            <input type="text" id="loginEmail" placeholder="Enter your Email" />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password:</label>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button onclick="login()">Login</button>
+        </div>
+
+        <div id="signup" class="tab-content" style="display: none">
+          <div class="form-group">
+            <input type="text" id="signupName" placeholder="Enter your name" />
+          </div>
+          <div class="form-group">
+            <label for="signupEmail">Email:</label>
+            <input
+              type="email"
+              id="signupEmail"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="signupPassword">Password:</label>
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="Choose a password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="signupGender">Gender:</label>
+            <select id="signupGender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <button onclick="signup()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./Scripts/index.js"></script>
+</html>

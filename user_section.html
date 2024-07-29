@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="user_data"></div>
+  </body>
+
+  <script>
+    function getEmailFromUrl() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      return urlParams.get("email");
+    }
+
+    // Example usage:
+    const email = getEmailFromUrl();
+    console.log(email);
+    let userData = JSON.parse(localStorage.getItem("user_data")) || []; // Initialize as an array
+
+    let Data = userData.filter((profile) => {
+      return profile.Email === email;
+    });
+    console.log(Data);
+    function displayUserData(Data) {
+      //   console.log(userData);
+      // Get a reference to the container where you want to display the data
+      var containerm = document.getElementById("user_data") || [];
+
+      // Create a div element to hold the user data
+      var userDiv = document.createElement("div");
+
+      // Iterate over the properties of the newData object and create HTML
+      console.log(Data[0]);
+      userDiv.innerHTML = `${Data[0].Books["Rent"]} and ${Data[0].Books["Bought"]} `;
+
+      // Append the userDiv to the container
+      containerm.appendChild(userDiv);
+    }
+
+    // Example usage:
+    displayUserData(Data);
+  </script>
+</html>

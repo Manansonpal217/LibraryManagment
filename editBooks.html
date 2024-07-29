@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Product</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        // Get the index from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const indexm = urlParams.get("name");
+        // console.log(indexm);
+
+        const allBooks = JSON.parse(localStorage.getItem("Books")) || [];
+        // console.log(allUsers);
+        let product = allBooks.filter((product) => product.Name === indexm);
+        product = product[0];
+        // console.log(product);
+
+        // console.log(product);
+        // product = product[0];
+        // console.log(product);
+        // Populate the edit form with existing values
+        $("#edit-description").val(product.Name);
+        $("#edit-price").val(product.Price);
+        // $("#edit-price").val(product.Password);
+        console.log($("#edit-description").val());
+        // Event listener for the save button
+        $("#saveBtn").on("click", function () {
+          // Update the product in the array
+          product.Name = $("#edit-description").val();
+          product.Price = $("#edit-price").val();
+          //   product.Password = $("#edit-price").val();
+
+          // Update the localStorage
+          localStorage.setItem("Books", JSON.stringify(allBooks));
+
+          // Redirect back to the table page
+          window.location.href = "adminBook.html";
+        });
+      });
+    </script>
+
+    <div class="container mt-5">
+      <h2>Edit Product</h2>
+      <form>
+        <div class="form-group">
+          <label for="edit-description">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="edit-description"
+            placeholder="Description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="edit-price">Price:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="edit-price"
+            placeholder="Price"
+          />
+        </div>
+        <button type="button" class="btn btn-success" id="saveBtn">Save</button>
+      </form>
+    </div>
+  </body>
+</html>

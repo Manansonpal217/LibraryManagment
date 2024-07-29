@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="styles.css" />
+     -->
+    <style>
+      /* Reset some default styles */
+      body,
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+      }
+
+      /* Navbar */
+      nav {
+        background-color: #1f2937;
+        color: #fff;
+        padding: 1rem;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .nav-link:hover {
+        color: #ccc;
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .header-image {
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .header-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .explore-link {
+        background-color: #1f2937;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+
+      .explore-link:hover {
+        background-color: #217dbb;
+      }
+
+      /* Featured Books Section */
+      .featured-books {
+        background-color: #fff;
+        padding: 2rem 1rem;
+      }
+
+      .featured-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      .book-item {
+        background-color: #f3f4f6;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+      }
+
+      .book-image {
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        height: 70%;
+      }
+
+      .book-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .book-description {
+        font-size: 1rem;
+      }
+
+      /* Upcoming Events Section */
+      .upcoming-events {
+        background-color: #1f2937;
+        color: #fff;
+        padding: 2rem 1rem;
+      }
+
+      .events-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .event-item {
+        border: 2px solid #4a5568;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+      }
+
+      .event-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .event-description {
+        font-size: 1rem;
+      }
+
+      /* Library Services Section */
+      .library-services {
+        padding: 2rem 1rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .service-list {
+        list-style-type: disc;
+        margin-left: 1rem;
+        font-size: 1rem;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #1f2937;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .footer-content {
+        text-align: center;
+      }
+
+      .footer-text {
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="nav-container">
+        <div class="nav-links">
+          <a href="#" class="nav-link">Home</a>
+        </div>
+        <div class="nav-links">
+          <a href="#" class="nav-link">Books</a>
+          <a href="#" class="nav-link">Members</a>
+          <a href="#" class="nav-link">Transactions</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header with Image and Link -->
+    <header>
+      <img
+        src="./Images/candle-the-room-arch-old-library-hd-wallpaper-preview.jpg"
+        alt="Library Image"
+        class="header-image"
+      />
+      <h1 class="header-title">Library Management System</h1>
+      <button class="explore-link" onclick="redirect_book()">
+        Explore Our Books
+      </button>
+    </header>
+
+    <!-- Featured Books Section -->
+    <section class="featured-books">
+      <div class="featured-container">
+        <h2 class="section-title">Featured Books</h2>
+        <div class="grid">
+          <div class="book-item">
+            <img
+              src="./Images/The Art of programming.jpg"
+              alt="Featured Book 1"
+              class="book-image"
+            />
+            <h3 class="book-title">The Programming</h3>
+            <p class="book-description">
+              Explore the world of programming with this comprehensive guide.
+            </p>
+          </div>
+
+          <div class="book-item">
+            <img
+              src="./Images/The other slavery.jpg"
+              alt="Featured Book 2"
+              class="book-image"
+            />
+            <h3 class="book-title">History Uncovered</h3>
+            <p class="book-description">
+              Discover the untold stories from different periods of history.
+            </p>
+          </div>
+          <div class="book-item">
+            <img
+              src="./Images/Rich dad poor dad.jpg"
+              alt="Featured Book 2"
+              class="book-image"
+            />
+            <h3 class="book-title">Rich Dad Poor Dad</h3>
+            <p class="book-description">
+              Discover the untold stories from different periods of history.
+            </p>
+          </div>
+          <div class="book-item">
+            <img
+              src="./Images/YouCan,byGeorgeMatthewAdams.webp"
+              alt="Featured Book 2"
+              class="book-image"
+            />
+            <h3 class="book-title">You Can</h3>
+            <p class="book-description">
+              Discover the untold stories from different periods of history.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="upcoming-events">
+      <div class="events-container">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="grid">
+          <div class="event-item">
+            <h3 class="event-title">Book Club Meeting</h3>
+            <p class="event-description">
+              Join our book club meeting on <strong>April 15th, 2024</strong> to
+              discuss the latest bestsellers.
+            </p>
+          </div>
+          <div class="event-item">
+            <h3 class="event-title">Author Signing</h3>
+            <p class="event-description">
+              Meet your favorite authors at our upcoming signing event on
+              <strong>May 3rd, 2024</strong>.
+            </p>
+          </div>
+          <div class="event-item">
+            <h3 class="event-title">Author Signing</h3>
+            <p class="event-description">
+              Meet your favorite authors at our upcoming signing event on
+              <strong>May 3rd, 2024</strong>.
+            </p>
+          </div>
+          <div class="event-item">
+            <h3 class="event-title">Author Signing</h3>
+            <p class="event-description">
+              Meet your favorite authors at our upcoming signing event on
+              <strong>May 3rd, 2024</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Library Services Section -->
+    <section class="library-services">
+      <h2 class="section-title">Library Services</h2>
+      <p class="section-description">
+        Our library offers a range of services to enhance your reading
+        experience:
+      </p>
+      <ul class="service-list">
+        <li>Book Rental and Purchase</li>
+        <li>E-book Downloads</li>
+        <li>Research Assistance</li>
+        <li>Reading Clubs</li>
+        <li>Quiet Study Areas</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text">
+          &copy; 2024 Library Management System. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script>
+    function getEmailFromUrl() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      return urlParams.get("email");
+    }
+
+    // Example usage:
+    const email = getEmailFromUrl();
+    console.log("Manan");
+    console.log(email);
+    function redirect_book() {
+      window.location.href = `book_section.html?email=${email}`;
+    }
+  </script>
+</html>
